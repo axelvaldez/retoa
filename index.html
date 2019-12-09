@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head>
+    <script src="p5.js"></script>
+    <script src="p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+    <div class="main-layout">
+      <div class="editor-area">
+        <h2>Editor</h2>
+        <textarea id="code" cols="30" rows="10"></textarea>
+        <div class="editor-actions">
+          <button id="run">Dibuja (ENTER)</button>
+        </div>
+      </div>
+      <div class="preview-area">
+        <h2>Resultado</h2>
+        <div id="sketch">
+        </div>
+      </div>
+      <div class="commands-area">
+        <h2>Comandos</h2>
+        <div>
+          <h5>MOVIMIENTOS</h5>
+          <strong>lin-X</strong><br>linea de X pixels<br>
+          <strong>mov-X</strong><br>mover X pixels sin dibujar<br>
+          <strong>rev-X</strong><br>mover X pixels en reversa sin dibujar<br>
+          
+          <h5>GIROS</h5>
+          <strong>der-X</strong><br>girar X grados a la derecha<br>
+          <strong>izq-X</strong><br>girar X grados a la izquierda<br>
+        
+          <h5>COLOR</h5>
+          <strong>col-X</strong><br>Cambia el color de la linea. X puede ser:<br>
+          0 = negro<br>
+          1 = rojo<br>
+          2 = verde<br>
+          3 = azul<br>
+          
+          <h5>CICLOS</h5>
+          <strong>REP-X<br>
+            [comandos]<br>
+          FIN</strong><br>Repite X veces los comandos entre REP y FIN<br>
+        </div>
+      </div>
+    </div>
+    
+    <script src="turtle.js"></script>
+        <script src="sketch.js"></script>  
+  
+
+</body></html>

@@ -1,0 +1,105 @@
+*{
+  box-sizing: border-box
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+canvas {
+  display: block;
+  border: 1px solid #ddd;
+  width: 100% !important;
+  max-width: 800px;
+  height: auto !important;
+}
+body{
+  background: #333;
+  margin: 0 auto;
+  font-family: monospace, sans-serif;
+}
+
+h2{
+  font-size: 1rem;
+  line-height: 1;
+  margin: 0;
+  padding: .5rem;
+  background: #666;
+  color: #fff;
+}
+
+.main-layout{
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  width: 100vw;
+}
+
+.editor-area{
+  display: grid;
+  grid-template-rows: 2rem auto 4rem;
+}
+
+textarea{
+  width: 200px;
+  background: #444;
+  color: #fff;
+  border: none;
+  height: calc(100vh - 100px);
+  padding: 20px;
+  font-size: 20px;
+  font-family: monospace;
+  float: left;
+}
+
+.editor-actions{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-area{
+  background: #f0f0f0;
+}
+
+#sketch{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.commands-area{
+  color: #aaa;
+}
+
+.commands-area div{
+  margin: 0;
+  padding: 0 1rem;
+  line-height: 1.5;
+  font-size: .8rem;
+}
+
+.commands-area h5{
+  color: #aaa;
+  font-size: 1rem;
+  margin: 1rem 0;
+  border-bottom: 1px solid #aaa;
+}
+
+.commands-area strong{
+  color: #fff;
+  font-size: 1rem;
+}
+
+button{
+  display: inline-block;
+  font-size: 1rem;
+  font-family: monospace, sans-serif;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background: #0f0;
+  color: #060;
+}
