@@ -14,6 +14,7 @@
         <p>Dibuja con código</p>
       </div>
       <label class="toggle-guides"><input type="checkbox" id="guides" checked>Mostrar Guías</label>
+      <a href="#ayuda">Ayuda</a>
     </header>
     <div class="main-layout">
       <div class="editor-area">
@@ -32,29 +33,36 @@
         </div>
       </div>
 
-      <div class="commands-area">
-        <h2>Comandos</h2>
-        <div>
-          <h5>MOVIMIENTOS</h5>
-          <strong>lin-X</strong><br>linea de X pixels<br>
-          <strong>mov-X</strong><br>mover X pixels sin dibujar<br>
-          <strong>rev-X</strong><br>mover X pixels en reversa sin dibujar<br>
-          
-          <h5>GIROS</h5>
-          <strong>der-X</strong><br>girar X grados a la derecha<br>
-          <strong>izq-X</strong><br>girar X grados a la izquierda<br>
-        
-          <h5>COLOR</h5>
-          <strong>col-X</strong><br>Cambia el color de la linea. X puede ser:<br>
-          0 = negro<br>
-          1 = rojo<br>
-          2 = verde<br>
-          3 = azul<br>
-          
-          <h5>CICLOS</h5>
-          <strong>REP-X<br>
-            [comandos]<br>
-          FIN</strong><br>Repite X veces los comandos entre REP y FIN<br>
+      <div class="commands-area" id="ayuda">
+        <div class="inner">
+          <div>
+            <h5>MOVIMIENTOS</h5>
+            <strong>lin-X</strong><br>linea de X pixels<br>
+            <strong>mov-X</strong><br>mover X pixels sin dibujar<br>
+            <strong>rev-X</strong><br>mover X pixels en reversa sin dibujar<br>
+          </div>
+          <div>
+            <h5>GIROS</h5>
+            <strong>der-X</strong><br>girar X grados a la derecha<br>
+            <strong>izq-X</strong><br>girar X grados a la izquierda<br>
+          </div>
+          <div>
+            <h5>COLOR</h5>
+            <strong>col-X</strong><br>Cambia el color de la linea. X puede ser:<br>
+            0 = negro<br>
+            1 = rojo<br>
+            2 = verde<br>
+            3 = azul<br>
+          </div>
+          <div> 
+            <h5>CICLOS</h5>
+            <strong>REP-X<br>
+              [comandos]<br>
+            FIN</strong><br>Repite X veces los comandos entre REP y FIN<br>
+          </div>
+        </div>
+        <div class="commands-actions">
+          <a href="#" class="button">Entendido</a>
         </div>
       </div>
     </div>
