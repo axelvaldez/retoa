@@ -1,25 +1,37 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html>
+  <head>
     <script src="p5.js"></script>
-    <script src="p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8">
-
+    <title>Tortuga - Dibuja con código</title>
   </head>
   <body>
+    <header>
+      <img src="red-shell.png" alt="Tortuga">
+      <div>
+        <h1>Tortuga</h1>
+        <p>Dibuja con código</p>
+      </div>
+      <label class="toggle-guides"><input type="checkbox" id="guides" checked>Mostrar Guías</label>
+    </header>
     <div class="main-layout">
       <div class="editor-area">
-        <h2>Editor</h2>
-        <textarea id="code" cols="30" rows="10"></textarea>
-        <label><input type="checkbox" id="guides" checked>Mostrar Guías</label>
+        <div class="editor-window">
+          <h2>Editor</h2>
+          <textarea id="code" cols="30" rows="10"></textarea>
+        </div>
         <div class="editor-actions">
           <button id="run">Dibuja (ENTER)</button>
         </div>
       </div>
       <div class="preview-area">
-        <h2>Resultado</h2>
-        <div id="sketch">
+        <div class="preview-window">
+          <h2>Resultado</h2>
+          <div id="sketch"></div>
         </div>
       </div>
+
       <div class="commands-area">
         <h2>Comandos</h2>
         <div>

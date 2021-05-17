@@ -5,6 +5,12 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  --positive: #fff;
+  --negative: #111;
+  --medium: #444;
+  --high: #ddd;
+  --low: #222;
+  --accent: #c03;
 }
 canvas {
   display: block;
@@ -14,18 +20,41 @@ canvas {
   height: auto !important;
 }
 body{
-  background: #333;
+  background: var(--positive);
   margin: 0 auto;
   font-family: monospace, sans-serif;
 }
+
+h1{
+  margin: 0;
+}
+
 
 h2{
   font-size: 1rem;
   line-height: 1;
   margin: 0;
   padding: .5rem;
-  background: #666;
-  color: #fff;
+  background: linear-gradient(var(--positive), var(--high));
+  color: var(--low);
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+header img{
+  height: 3rem;
+  width: auto;
+  margin-right: 1rem;
+}
+
+header p{
+  margin: 0;
 }
 
 .main-layout{
@@ -35,43 +64,56 @@ h2{
 }
 
 .editor-area{
-  display: grid;
-  grid-template-rows: 2rem auto 4rem 4rem;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.editor-area label{
+.editor-window{
+  box-shadow: 0 4px 32px rgba(0,0,0,.25);
+  margin: 0 1rem 1rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  padding: 1rem 1rem 0;
+  flex-direction: column;
 }
+
 
 textarea{
   width: 100%;
-  background: #444;
+  background: var(--negative);
   color: #fff;
   border: none;
   padding: 20px;
   font-size: 20px;
   font-family: monospace;
   float: left;
+  height: 800px;
 }
 
 .editor-actions{
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  margin: 0 1rem 1rem 1rem;
 }
 
 .preview-area{
-  background: #f0f0f0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.preview-window{
+  width: 800px;
+  height: calc(800px + 2rem);
+  box-shadow: 0 4px 32px rgba(0,0,0,.25);
+}
+
+.toggle-guides{
+  margin-left: auto;
 }
 
 #sketch{
-  height: calc(100vh - 4rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,6 +152,7 @@ button{
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
-  background: #0f0;
-  color: #060;
+  background: var(--accent);
+  color: var(--positive);
+  cursor: pointer;
 }
