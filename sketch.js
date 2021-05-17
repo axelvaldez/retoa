@@ -1,9 +1,10 @@
 const code = document.querySelector("#code");
 const run = document.querySelector("#run");
+const toggleGuides = document.querySelector("#guides");
 let commands = [];
+let showGuides = true;
 
 function setup() {
-  
   // setup drawing env
   let canvas = createCanvas(800, 800);
   translate(width/2, height/2);
@@ -21,20 +22,11 @@ function setup() {
 }
 
 function go(){
-  
   // parse commands from textarea
   commands = code.value.split("\n");
   commands.pop();
-  
-  //parse into command and argument pairs
-  let pairs = [];
-  for(let i = 0; i < commands.length; i++){
-    pairs = commands[i].split("-");
-  }
-  
   // send pairs to drawing
-  goTurtle(pairs);
-  
+  goTurtle(commands);
 }
 
 run.addEventListener("click", (e) =>{
@@ -43,17 +35,34 @@ run.addEventListener("click", (e) =>{
 });
 
 code.addEventListener("keyup", (e) => {
-  if (event.keyCode == 13){
+  if (e.keyCode == 13){
     go();
   }
 });
 
-function goTurtle(pairs){
+toggleGuides.addEventListener("click", (e) => {
+  showGuides = !showGuides;
+  go();
+});
+
+function drawGuides(){
+  if(showGuides){
+    noFill();
+    stroke(255,0,0,64);
+    circle(0,0,10);
+    stroke(255,0,0,64);
+    line(0, 0, 800, 0);
+    strokeWeight(2);
+  }
+}
+
+function goTurtle(comms){
   resetMatrix();
+  translate(width/2, height/2);
   background(255);
   stroke(0);
-  for(let i = 0; i < commands.length; i++){
-    const pair = commands[i].split("-");
+  for(let i = 0; i < comms.length; i++){
+    const pair = comms[i].split("-");
     let arg = pair[1];
     if(arg) arg = parseInt(arg.trim());
     const cmd = pair[0].trim();
@@ -62,13 +71,13 @@ function goTurtle(pairs){
       // create repeat array
       let repCommands = [];
       
-      while(j < commands.length){
-        if(commands[j].split("-")[0] === "FIN"){
+      while(j < comms.length){
+        if(comms[j].split("-")[0] === "FIN"){
           i = j;
           break;
         }
-        repCommands.push(commands[j]);
-        if(j + 1 < commands.length){
+        repCommands.push(comms[j]);
+        if(j + 1 < comms.length){
           j++;
         }
         else{
@@ -92,4 +101,5 @@ function goTurtle(pairs){
       execute[cmd](arg);
     }
   }
+  drawGuides();
 }

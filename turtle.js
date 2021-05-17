@@ -32,6 +32,10 @@ class Turtle{
       case 3: stroke(0, 0, 255); break; //blue
     }
   }
+
+  drawCursor(){
+    circle(0, 0, 5);
+  }
 }
 
 const execute = {
